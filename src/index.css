@@ -60,3 +60,8 @@ code {
 .score__p2 {
     color: var(--secondary);
 }
+.game-over {
+    font-size: 2rem;
+    text-align: center;
+    color: red;
+}

@@ -1,23 +1,18 @@
-import { Rect } from 'react-konva'
+import { PADDLE_WIDTH, PADDLE_HEIGHT } from '../utils/constants'
 
-const Paddle = ({ x, y, fill, playerId, ...rest }) => {
-    const handleTransform = (x) => {
-        console.log(x)
-        console.log('ss')
+const Paddle = (props) => {
+    return {
+        x: props.x || PADDLE_WIDTH,
+        y: props.canvas.height / 2 - PADDLE_HEIGHT / 2 || 0,
+        width: PADDLE_WIDTH,
+        height: PADDLE_HEIGHT,
+        color: props.color || '#000000',
+        score: 0,
+        // top: props.canvas.height / 2 - PADDLE_HEIGHT,
+        // right: 15,
+        // bottom: props.canvas.height / 2 - PADDLE_HEIGHT,
+        // left: 15,
     }
-    return (
-        <Rect
-            key={playerId}
-            onClick={handleTransform}
-            onTransformStart={handleTransform}
-            x={x}
-            y={y}
-            width={10}
-            height={80}
-            fill={fill}
-            {...rest}
-        />
-    )
 }
 
 export default Paddle
